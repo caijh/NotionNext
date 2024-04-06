@@ -334,7 +334,11 @@ function TodayCard({ cRef, siteInfo }) {
    * @param {*} e
    */
   function handleCardClick(e) {
-    router.push(siteConfig('HEO_HERO_TITLE_LINK', null, CONFIG))
+    const link = siteConfig('HEO_HERO_TITLE_LINK', null, CONFIG)
+    if (!link) {
+      return
+    }
+    router.push(link)
   }
 
   return (
